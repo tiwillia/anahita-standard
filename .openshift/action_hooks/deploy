@@ -3,9 +3,13 @@
 	$app_root = rtrim(getenv('OPENSHIFT_REPO_DIR'),'/');
   $data_dir = rtrim(getenv('OPENSHIFT_DATA_DIR'),'/');
 	$www_dir  = $data_dir.'/www';
+	$vendor_dir  = $data_dir.'/vendor';
   $php_sym_loc = $app_root.'/php';
   $www_sym_loc = $app_root.'/www';
+  $vendor_sym_loc = $app_root.'/vendor';
 	mkdir($www_dir, 0755);
+  mkdir($vendor_dir, 0755);
 	exec("ln -s $www_dir $php_sym_loc");
 	exec("ln -s $www_dir $www_sym_loc"); 
+	exec("ln -s $vendor_dir $vendor_sym_loc"); 
 ?>
