@@ -1,8 +1,7 @@
 #!/usr/bin/env php
 <?php
 	$app_root = rtrim(getenv('OPENSHIFT_REPO_DIR'),'/');
-  $data_dir = rtrim(getenv('OPENSHIFT_DATA_DIR'),'/');
-	$www_dir  = $data_dir.'/www';
+	$www_dir  = $app_root.'/www';
 	passthru("cd $app_root && php $app_root/bin/composer update");
 	$host = getenv('OPENSHIFT_MYSQL_DB_HOST');
 	$port = getenv('OPENSHIFT_MYSQL_DB_PORT');
