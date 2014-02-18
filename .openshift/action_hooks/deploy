@@ -3,8 +3,8 @@
 	$app_root = rtrim(getenv('OPENSHIFT_REPO_DIR'),'/');
   $data_dir = rtrim(getenv('OPENSHIFT_DATA_DIR'),'/');
 	$www_dir  = $data_dir.'/www';
-  $php_sym_loc = $app_root.'/php'
-  $www_sym_loc = $app_root.'/www'
+  $php_sym_loc = $app_root.'/php';
+  $www_sym_loc = $app_root.'/www';
 	mkdir($www_dir, 0755);
 	exec("ln -s $www_dir $php_sym_loc");
 	exec("ln -s $www_dir $www_sym_loc"); 
